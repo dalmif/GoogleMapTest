@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             let coordinate0 =  CLLocation(latitude: des_tar[0].latitude, longitude: des_tar[0].longitude)
             let coordinate1 =  CLLocation(latitude: des_tar[1].latitude, longitude: des_tar[1].longitude)
             let distanceInMeters = coordinate0.distance(from: coordinate1)
+            
             print("distance: " + String(describing: distanceInMeters))
         }
     }
