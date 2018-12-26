@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleMapTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htI-ZR-OCU" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Vtv-8d-2Q8">
+                                <rect key="frame" x="192" y="433" width="30" height="30"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vtv-8d-2Q8" secondAttribute="height" multiplier="1:1" id="OIy-9b-hYa"/>
+                                    <constraint firstAttribute="width" constant="30" id="Zwn-UJ-yjA"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OSt-3W-ejL" appends="YES" id="Ojk-J1-7kI"/>
+                                </connections>
+                            </imageView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuF-83-Lgv">
+                                <rect key="frame" x="0.0" y="821" width="414" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5r-Yk-OFc">
+                                        <rect key="frame" x="10" y="10" width="394" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="O5r-Yk-OFc" firstAttribute="top" secondItem="HuF-83-Lgv" secondAttribute="top" constant="10" id="7KV-yV-iYC"/>
+                                    <constraint firstAttribute="trailing" secondItem="O5r-Yk-OFc" secondAttribute="trailing" constant="10" id="for-ac-ZvJ"/>
+                                    <constraint firstItem="O5r-Yk-OFc" firstAttribute="leading" secondItem="HuF-83-Lgv" secondAttribute="leading" constant="10" id="g3E-DE-R0b"/>
+                                    <constraint firstAttribute="bottom" secondItem="O5r-Yk-OFc" secondAttribute="bottom" constant="10" id="pKe-9f-lOw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="htI-ZR-OCU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H9W-DJ-Z8T"/>
+                            <constraint firstAttribute="bottom" secondItem="htI-ZR-OCU" secondAttribute="bottom" id="LcN-ma-JlC"/>
+                            <constraint firstItem="Vtv-8d-2Q8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wdi-Ck-any"/>
+                            <constraint firstItem="htI-ZR-OCU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dbD-t3-dWh"/>
+                            <constraint firstItem="HuF-83-Lgv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mTo-lV-mDJ"/>
+                            <constraint firstItem="Vtv-8d-2Q8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ndV-ku-rtL"/>
+                            <constraint firstItem="HuF-83-Lgv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pr2-ne-8kQ"/>
+                            <constraint firstItem="HuF-83-Lgv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uyd-BU-Mgg"/>
+                            <constraint firstItem="htI-ZR-OCU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xmN-cI-ocp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="O5r-Yk-OFc" id="AiH-bO-iYS"/>
+                        <outlet property="mapView" destination="htI-ZR-OCU" id="Ydh-cf-1WW"/>
+                        <outlet property="pinImage" destination="Vtv-8d-2Q8" id="mIW-H4-snq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OSt-3W-ejL">
+                    <connections>
+                        <action selector="pinClicked:" destination="BYZ-38-t0r" id="pQw-DT-xSH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="133.25892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="41.513511657714844" height="41.513511657714844"/>
+    </resources>
 </document>
